@@ -1,0 +1,19 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  background-color: lightgray;
+  .header {
+    background-color: aqua;
+  }
+
+  .conteudo {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .menu {
+    background-color: beige;
+    min-width: 200px;
+  }
+
+}

@@ -1,0 +1,88 @@
+<div class="conteudo">
+    <form [formGroup]="formGroup" autocomplete="off" novalidate (ngSubmit)="salvar(formGroup.value)"
+        fxLayout="column wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <h4>Cadastro de paciente</h4>
+        <mat-form-field>
+            <input matInput type="text" placeholder="Nome" formControlName="nome" id="nome">
+            <mat-hint align="end">Digite o nome</mat-hint>
+            <mat-error *ngIf="hasError('nome', 'required')">Nome é obrigatório</mat-error>
+            <!-- <mat-error *ngIf="hasError('nome', 'maxlength')">You have more than 60 characters</mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field>
+            <input appMascaraTelefone matInput type="text" maxlength="13" placeholder="telefone" formControlName="telefone" id="telefone">
+            <mat-hint align="end">Digite o telefone</mat-hint>
+            <mat-error *ngIf="hasError('telefone', ['required'])">Telefone é obrigatório</mat-error>
+            <!-- <mat-error *ngIf="hasError('nome', 'maxlength')">You have more than 60 characters</mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput appMascaraCpf maxlength="14" type="text" placeholder="CPF" formControlName="cpf"
+                id="cpf">
+            <mat-hint align="end">Digite o CPF</mat-hint>
+            <mat-error *ngIf="hasError('cpf', 'required')">O CPF é obrigatório</mat-error>
+            <!-- <mat-error *ngIf="hasError('telefone', 'maxlength')">You have more than 60 characters</mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput appMascaraCep type="text" placeholder="CEP" maxlength="9" formControlName="cep" id="cep">
+            <mat-hint align="end">Digite o CEP</mat-hint>
+            <mat-error *ngIf="hasError('cep', 'required')">O CEP é obrigatório</mat-error>
+            <!-- <mat-error *ngIf="hasError('nome', 'maxlength')">You have more than 60 characters</mat-error> -->
+        </mat-form-field>
+
+
+        <mat-form-field>
+            <div class="groupName">
+                <input matInput type="text" placeholder="Email" formControlName="email" id="email">
+            </div>
+            <mat-hint align="end">Digite o email</mat-hint>
+            <mat-error *ngIf="hasError('email', 'required')">O Email é obrigatório</mat-error>
+
+            <!-- <mat-error *ngIf="hasError('nome', 'maxlength')">You have more than 60 characters</mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field>
+            <div class="groupName">
+                <input matInput type="text" placeholder="Endereço" formControlName="endereço" id="endereço">
+            </div>
+            <mat-hint align="end">Digite o endereço</mat-hint>
+            <mat-error *ngIf="hasError('logradouro', 'required')">O endereço é obrigatório</mat-error>
+            <!-- <mat-error *ngIf="hasError('nome', 'maxlength')">You have more than 60 characters</mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field>
+            <div class="groupName">
+                <input matInput type="text" placeholder="Complemento" formControlName="complemento" id="complemento">
+            </div>
+            <mat-hint align="end">Digite o complemento</mat-hint>
+            <mat-error *ngIf="hasError('complemento', 'required')">O complemento é obrigatório</mat-error>
+            <!-- <mat-error *ngIf="hasError('nome', 'maxlength')">You have more than 60 characters</mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field>
+            <div class="groupName">
+                <input matInput type="text" placeholder="Bairro" formControlName="bairro" id="bairro">
+            </div>
+            <mat-hint align="end">Digite o bairro</mat-hint>
+            <mat-error *ngIf="hasError('bairro', 'required')">O bairro é obrigatório</mat-error>
+            <!-- <mat-error *ngIf="hasError('nome', 'maxlength')">You have more than 60 characters</mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field>
+            <div class="groupName">
+                <input matInput type="text" placeholder="Estado" formControlName="uf" id="uf">
+            </div>
+            <mat-hint align="end">Adicione o estado</mat-hint>
+            <mat-error *ngIf="hasError('uf', 'required')">O estado é obrigatório</mat-error>
+            <!-- <mat-error *ngIf="hasError('nome', 'maxlength')">You have more than 60 characters</mat-error> -->
+        </mat-form-field>
+
+        <mat-card-actions align="center">
+            <button mat-raised-button color="primary" [disabled]="!formGroup.valid">Salvar</button>
+            <button type="button" mat-raised-button color="warn" (click)="onCancel()">Cancelar</button>
+        </mat-card-actions>
+
+    </form>
+
+</div>

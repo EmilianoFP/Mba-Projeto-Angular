@@ -1,0 +1,17 @@
+<p>{{data | date: "dd/MM/yyyy"}}</p>
+<p>{{data | date | uppercase}}</p>
+<p>{{medicos | json}}</p>
+
+valor: <input type="number" [(ngModel)]="valor" />
+<br>
+multiplicador <input type="number" [(ngModel)]="multiplicador" />
+<br>
+resultado: {{ valor | multiplicar: multiplicador }}
+<br>
+
+<b>{{numeros | pares | json}}</b>
+<br>
+<br>
+<input type="text" [(ngModel)]="filtro">
+<br>
+{{ medicos | filtro: filtro | json }}

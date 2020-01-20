@@ -1,0 +1,14 @@
+<div class="content">
+  <div class="header">
+    <ng-content select="[header]"></ng-content>
+  </div>
+
+  <div class="conteudo">
+    <div class="menu">
+      <ng-content select=".menu"></ng-content>
+    </div>
+    <ng-content select="[conteudo]"></ng-content>
+  </div>
+
+  <ng-content select="[footer]"></ng-content>
+</div>
